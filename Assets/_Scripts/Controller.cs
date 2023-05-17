@@ -9,6 +9,7 @@ public class Controller : MonoBehaviour
     public static Controller Instance;
 
     internal InputAction MousePosition { get; private set; }
+    internal InputAction Interact { get; private set; }
     internal InputAction Move { get; private set; }
 
     private PlayerController _inputActions;
@@ -22,11 +23,11 @@ public class Controller : MonoBehaviour
         _inputActions = new PlayerController();
     }
 
-    
     private void OnEnable()
     {
-        Move = _inputActions.Player.Move;
         MousePosition = _inputActions.Player.MousePoint;
+        Interact = _inputActions.Player.Interact;
+        Move = _inputActions.Player.Move;
 
         _inputActions.Player.Enable();
     }

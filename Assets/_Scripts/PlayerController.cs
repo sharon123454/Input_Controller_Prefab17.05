@@ -81,7 +81,7 @@ public partial class @PlayerController: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""d363ab67-8ea7-4ce5-a1e8-83814fb4f99d"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
