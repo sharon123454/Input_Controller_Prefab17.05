@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private float _speed = 10;
+    [SerializeField] private float _animationTweaker = 1;
 
     private void Start()
     {
@@ -17,12 +18,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Controller.Instance.GetMoveDirection(transform) * _speed * Time.deltaTime);
+        Vector3 cache = Controller.Instance.GetMoveDirection(transform) * _speed * Time.deltaTime;
+        transform.Translate(cache);
+        _animator.SetFloat("Speed", cache.magnitude * _animationTweaker);
     }
-    
+
     private void Controller_Interact(InputAction.CallbackContext context)
     {
-        print("Interact Pressed");
+        _animator.SetTrigger("PickUp");
     }
 
 }
